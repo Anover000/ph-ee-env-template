@@ -15,9 +15,9 @@ spec:
       port: 8443
       protocol: TCP
       targetPort: 8443
-      {{ - if eq .Values.service.type "NodePort" }}
+      {{- if eq .Values.service.type "NodePort" }}
       nodePort: {{ .Values.service.nodePort.port}}
-      {{ - end }}
+      {{- end }}
     - name: http
       port: 82
       protocol: TCP

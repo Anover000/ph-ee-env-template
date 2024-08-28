@@ -11,9 +11,9 @@ spec:
       port: 80
       protocol: TCP
       targetPort: 5000
-      {{ - if eq .Values.service.type "NodePort" }}
+      {{- if eq .Values.service.type "NodePort" }}
       nodePort: {{ .Values.service.nodePort.port}}
-      {{ - end }}
+      {{- end }}
     - name: http
       port: 70
       protocol: TCP
