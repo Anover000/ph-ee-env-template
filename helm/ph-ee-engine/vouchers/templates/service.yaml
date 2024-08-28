@@ -11,11 +11,9 @@ spec:
       port: 80
       protocol: TCP
       targetPort: 8080
-      {{ - if eq .Values.service.type "NodePort" }}
-      nodePort: {{ .Values.service.nodePort.port}}
-      {{ - end }}
+
   selector:
     app: ph-ee-vouchers
   sessionAffinity: None
-  type: {{ .Values.service.type | default "ClusterIP" }}
+  type: ClusterIP
 {{- end }}
